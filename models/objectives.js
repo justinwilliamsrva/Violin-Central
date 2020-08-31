@@ -1,36 +1,28 @@
 module.exports = function(sequlize, Datatypes) {
-    const Objectives = sequlize.define("Objectives", {
-        objective: {
-            type: Datatypes.STRING,
-            allowNull: false
-        },
-        lesson_plan: {
-            type: Datatypes.TEXT
-        },
-        exercise_1: {
-            type: Datatypes.INTEGER,
-            allowNull: false
-        },
-        exercise_2:  {
-            type: Datatypes.INTEGER,
-        },
-        exercise_3: {
-            type: Datatypes.INTEGER,
-        },
-        exercise_4: {
-            type: Datatypes.INTEGER,
-        },
-        exercise_5: {
-            type: Datatypes.INTEGER,
-        }
+  const Objectives = sequlize.define("Objectives", {
+    objective: {
+      type: Datatypes.STRING,
+      allowNull: false
+    },
+    lesson_plan: {
+      type: Datatypes.TEXT
+    }
+  });
+  Objectives.associate = function(models) {
+    Objectives.belongsToMany(models.Exercises, {
+      through: "LessonPlan",
+      foreignKey: {
+        allowNull: false
+      },
+      as: "exercise"
     });
-    Objectives.associate = function(models) {
-        Objectives.hasMany(models.Exercises, {
-            foreignKey: {
-                allowNull: false
-              },
-              as: "exercise"
-        });
-    };
-    return Objectives
+  };
+  Objectives.associate = function(models) {
+    Objectives.belongsTo(models.Teachers, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+  return Objectives;
 };

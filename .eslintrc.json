@@ -9,10 +9,16 @@
     "node": true
   },
   "extends": "prettier",
-  "plugins": ["prettier"],
+  "plugins": ["prettier", "snakecasejs"],
+  "settings":
+    {
+        "snakecasejs/filter": ["ClassDeclaration", "NewExpression"],
+        "snakecasejs/whitelist": ["externalPath", "setNumber"]
+    },
   "rules": {
     "array-callback-return": "error",
-    "camelcase": "error",
+    "snakecasejs/snakecasejs": "off",
+    "camelcase": "off",
     "curly": "error",
     "dot-notation": "error",
     "eqeqeq": "error",
