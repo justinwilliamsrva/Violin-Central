@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="../js/exeSearch.js"></script>
+</head>
+
+<body>
+    <main class="container my-5">
+        <aside class="col-4 px-0 justify-content-center">
+            <form class="search-form">
+                <div class="exe-search my-3 row">
+                    <label class="px-2" for="mainpos">main position</label>
+                    <div class="col-8">
+                        <select class="form-control" id="mainpos">
+                            <option>1/2</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>5+</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="exe-search my-3 row">
+                    <label class="px-2" for="pos2">second position</label>
+                    <div class="col-8">
+                        <select class="form-control" id="pos2">
+                            <option>N/A</option>
+                            <option>1/2</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>5+</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="exe-search my-3 row">
+                    <label class="px-2" for="mainbow">main bowing</label>
+                    <div class="col-8">
+                        <select class="form-control" id="mainbow">
+                            <option>legato</option>
+                            <option>detache</option>
+                            <option>spiccato</option>
+                            <option>staccato</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="exe-search my-3 row">
+                    <label class="px-2" for="bow2">second bowing</label>
+                    <div class="col-8">
+                        <select class="form-control" id="bow2">
+                            <option>N/A</option>
+                            <option>legato</option>
+                            <option>detache</option>
+                            <option>spiccato</option>
+                            <option>staccato</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="exe-search my-3 row">
+                    <label class="px-2" for="key">key</label>
+                    <div class="col-8">
+                        <select class="form-control" id="key">
+                            <option>C major</option>
+                            <option>G major</option>
+                            <option>D major</option>
+                            <option>A major</option>
+                            <option>E major</option>
+                            <option>B major</option>
+                            <option>F# major</option>
+                            <option>Db major</option>
+                            <option>Ab major</option>
+                            <option>Eb major</option>
+                            <option>Bb major</option>
+                            <option>F major</option>
+                            <option>C minor</option>
+                            <option>G minor</option>
+                            <option>D minor</option>
+                            <option>A minor</option>
+                            <option>E minor</option>
+                            <option>B minor</option>
+                            <option>F# minor</option>
+                            <option>C# minor</option>
+                            <option>G# minor</option>
+                            <option>Eb minor</option>
+                            <option>Bb minor</option>
+                            <option>F minor</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="exe-search my-3 row">
+                    <label class="px-2" for="difficulty">difficulty</label>
+                    <div class="col-8">
+                        <select class="form-control" id="difficulty">
+                            <option>beginner</option>
+                            <option>easy</option>
+                            <option>medium</option>
+                            <option>advanced</option>
+                            <option>expert</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="exe-search my-3 row">
+                    <label class="px-2" for="focus">focus</label>
+                    <div class="col-8">
+                        <select class="form-control" id="focus">
+                            <option>N/A</option>
+                            <option>facility</option>
+                            <option>shifting</option>
+                            <option>intonation</option>
+                            <option>tone</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="exe-search my-3 row">
+                    <label class="px-2" for="type">type</label>
+                    <div class="col-8">
+                        <select class="form-control" id="type">
+                            <option>piece</option>
+                            <option>etude</option>
+                          </select>
+                    </div>
+                </div>
+                <input class="execsubmit" type="submit" value="search">
+            </form>
+        </aside>
+    </main>
+</body>
+
+</html>

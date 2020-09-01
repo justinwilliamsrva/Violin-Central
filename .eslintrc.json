@@ -35,7 +35,7 @@
     "no-unreachable": "error",
     "no-unused-vars": "error",
     "no-var": "error",
-    "prefer-arrow-callback": "error",
+    "prefer-arrow-callback": "off",
     "prefer-const": "error",
     "prettier/prettier": "error",
     "quotes": ["error", "double"],
