@@ -1,8 +1,6 @@
-INSERT INTO Exercises (exercise, book_title,author,positions,bowing,key,difficulty,focus,type) VALUES (1,"Kreutzer, Rodolphe","1,2,3,4","legato","A Mionr","Medium","Tone","Etude");
-INSERT INTO Exercises (exercise, book_title,author,positions,bowing,key,difficulty,focus,type) VALUES (2,"Kreutzer, Rodolphe","1,2,3","detache","C Major","Medium","Facility","Etude");
-INSERT INTO Exercises (exercise, book_title,author,positions,bowing,key,difficulty,focus,type) VALUES (3,"Kreutzer, Rodolphe","1,2,3,4,5,5+","detache","C Major","Medium","Facility","Etude");
-INSERT INTO Exercises (exercise, book_title,author,positions,bowing,key,difficulty,focus,type) VALUES (4,"Kreutzer, Rodolphe","1,2,3","staccato","C Major","Medium","Upbow Staccato","Etude");
-INSERT INTO Exercises (exercise, book_title,author,positions,bowing,key,difficulty,focus,type) VALUES (5,"Kreutzer, Rodolphe","1","detache","Eb Major","Medium","Facility","Etude");
+INSERT INTO Exercises (exercise, book_title,author_composer,primary_positions,secondary_positions,primary_bowing,secondary_bowing,key,difficulty,focus,type,image,link,book_description) VALUES (1,"42 Etudes for Violin","Kreutzer, Rodolphe","1","2,3,4","legato","null","A Minor","Medium","Tone","Etude","null","null","null")
+INSERT INTO Exercises (exercise, book_title,author_composer,primary_positions,secondary_positions,primary_bowing,secondary_bowing,key,difficulty,focus,type,image,link,book_description) VALUES (2,"42 Etudes for Violin","Kreutzer, Rodolphe","1","2,3,4","legato","null","C Major","Medium","Facility","Etude","null","null","null")
+INSERT INTO Exercises (exercise, book_title,author_composer,primary_positions,secondary_positions,primary_bowing,secondary_bowing,key,difficulty,focus,type,image,link,book_description) VALUES (3,"42 Etudes for Violin","Kreutzer, Rodolphe","1","2,3,4,5,5+","detache","null","C Major ","Medium","Facility","Etude","null","null","null")
 
 
 
