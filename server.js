@@ -1,6 +1,8 @@
 // Requiring necessary npm packages
 const express = require("express");
 const session = require("express-session");
+const sequelizeFixtures = require("sequelize-fixtures");
+const models = require("./models");
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
 
@@ -26,6 +28,19 @@ require("./routes/api-routes.js")(app);
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync({ force: true }).then(() => {
+  sequelizeFixtures
+    .loadFiles(
+      [
+        "fixtures/exercises.json",
+        "fixtures/teachers.json",
+        "fixtures/objectives.json"
+      ],
+      models
+    )
+    .then(function() {
+      console.log("Tables seeded");
+    });
+
   app.listen(PORT, () => {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",

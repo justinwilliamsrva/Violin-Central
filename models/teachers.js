@@ -44,7 +44,7 @@ module.exports = function(sequlize, Datatypes) {
 
   Teachers.associate = function(models) {
     Teachers.hasMany(models.Objectives, {
-      inDelete: "cascade"
+      onDelete: "cascade"
     });
   };
   return Teachers;

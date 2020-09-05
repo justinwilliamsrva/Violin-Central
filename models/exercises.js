@@ -1,5 +1,5 @@
-module.exports = function(sequlize, Datatypes) {
-  const Exercises = sequlize.define("Exercises", {
+module.exports = function(sequelize, Datatypes) {
+  const Exercises = sequelize.define("Exercises", {
     exercise: {
       type: Datatypes.DECIMAL(3, 1),
       allowNull: false
@@ -52,12 +52,15 @@ module.exports = function(sequlize, Datatypes) {
     }
   });
   Exercises.associate = function(models) {
-    Exercises.belongsToMany(models.Objectives, {
-      through: "LessonPlan",
-      foreignKey: {
-        allowNull: false
+    Exercises.belongsToMany(
+      models.Objectives,
+      {
+        through: "LessonPlan"
+      },
+      {
+        as: "exercise"
       }
-    });
+    );
   };
   return Exercises;
 };

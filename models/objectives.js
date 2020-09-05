@@ -10,11 +10,7 @@ module.exports = function(sequlize, Datatypes) {
   });
   Objectives.associate = function(models) {
     Objectives.belongsToMany(models.Exercises, {
-      through: "LessonPlan",
-      foreignKey: {
-        allowNull: false
-      },
-      as: "exercise"
+      through: "LessonPlan"
     });
   };
   Objectives.associate = function(models) {

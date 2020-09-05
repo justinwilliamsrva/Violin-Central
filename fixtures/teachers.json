@@ -1,0 +1,13 @@
+[
+    {
+        "model": "Teachers",
+        "data": {
+            "first_name": "Justin",
+            "last_name": "Williams",
+            "city": "Richmond",
+            "state": "Virginia",
+            "email": "katharine.wooldridge@gmail.com",
+            "password": "thispassword"
+        }
+    }
+]
