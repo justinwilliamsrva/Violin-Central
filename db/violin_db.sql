@@ -2,6 +2,8 @@ DROP DATABASE IF EXISTS violin_db;
 
 CREATE DATABASE violin_db;
 
+Use violin_db
+
 Create Table exercises(
 id INT auto_increment,
 exercise DECIMAL(3,1),
