@@ -52,31 +52,5 @@ module.exports = function(app) {
         }
     });
 
-    app.get("/api/exercises", (req, res) => {
-        let { mainPosition } = req.query;
-        let { otherPosition } = req.query;
-        let { mainBowing } = req.query;
-        let { otherBowing } = req.query;
-        let { key } = req.query;
-        let { focus } = req.query;
-        let { type } = req.query;
-
-        Exercises.findAll({
-            
-            where: {
-                [Op.and]: [
-                    { positions: { [Op.like]: "%" + mainPosition + "%" } },
-                    // { secondary_positions: { [Op.like]: "%" + otherPosition + "%" } },
-                    { bowing: { [Op.like]: "%" + mainBowing + "%" } },
-                    // { secondary_bowing: { [Op.like]: "%" + otherBowing + "%" } },
-                    { musical_key: { [Op.like]: "%" + key + "%" } },
-                    { focus: { [Op.like]: "%" + focus + "%" } },
-                    { type: { [Op.like]: "%" + type + "%" } },
-                ],
-            },
-        }).then(function(exercises) {
-            // console.log(exercises);
-            res.render("exercise", { exercises });
-        });
-    });
+    
 };
