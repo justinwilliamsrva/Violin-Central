@@ -1,38 +1,156 @@
-<h1>Cats!</h1>
+  <main class="container my-5">
+<div class="row">
+        <aside class="col-4 px-0 m-0 border-right border-dark justify-content-center">
+            <h2>Search</h2>
+            <form action="/exercises" class="search-form">
+                <div class="exe-search my-3 row">
+                    <label class="px-2" for="mainpos">main position</label>
+                    <div class="col-8">
+                        <select class="form-control" name="mainPosition" id="mainpos">
+                            <option>1/2</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>5+</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="exe-search my-3 row">
+                    <label class="px-2" for="pos2">second position</label>
+                    <div class="col-8">
+                        <select name="otherPosition" class="form-control" id="pos2">
+                            <option>N/A</option>
+                            <option>1/2</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>5+</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="exe-search my-3 row">
+                    <label class="px-2" for="mainbow">main bowing</label>
+                    <div class="col-8">
+                        <select class="form-control" name="mainBowing" id="mainbow">
+                            <option>legato</option>
+                            <option>detache</option>
+                            <option>spiccato</option>
+                            <option>staccato</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="exe-search my-3 row">
+                    <label class="px-2" for="bow2">second bowing</label>
+                    <div class="col-8">
+                        <select class="form-control" name="otherBowing" id="bow2">
+                            <option>N/A</option>
+                            <option>legato</option>
+                            <option>detache</option>
+                            <option>spiccato</option>
+                            <option>staccato</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="exe-search my-3 row">
+                    <label class="px-2" for="key">key</label>
+                    <div class="col-8">
+                        <select class="form-control" nmae="key" id="key">
+                            <option>C major</option>
+                            <option>G major</option>
+                            <option>D major</option>
+                            <option>A major</option>
+                            <option>E major</option>
+                            <option>B major</option>
+                            <option>F# major</option>
+                            <option>Db major</option>
+                            <option>Ab major</option>
+                            <option>Eb major</option>
+                            <option>Bb major</option>
+                            <option>F major</option>
+                            <option>C minor</option>
+                            <option>G minor</option>
+                            <option>D minor</option>
+                            <option>A minor</option>
+                            <option>E minor</option>
+                            <option>B minor</option>
+                            <option>F# minor</option>
+                            <option>C# minor</option>
+                            <option>G# minor</option>
+                            <option>Eb minor</option>
+                            <option>Bb minor</option>
+                            <option>F minor</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="exe-search my-3 row">
+                    <label class="px-2" for="difficulty">difficulty</label>
+                    <div class="col-8">
+                        <select class="form-control" name="difficulty" id="difficulty">
+                            <option>beginner</option>
+                            <option>easy</option>
+                            <option>medium</option>
+                            <option>advanced</option>
+                            <option>expert</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="exe-search my-3 row">
+                    <label class="px-2" for="focus">focus</label>
+                    <div class="col-8">
+                        <select class="form-control" name="focus" id="focus">
+                            <option>N/A</option>
+                            <option>facility</option>
+                            <option>shifting</option>
+                            <option>intonation</option>
+                            <option>tone</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="exe-search my-3 row">
+                    <label class="px-2" for="type">type</label>
+                    <div class="col-8">
+                        <select class="form-control" name="type" id="type">
+                            <option>piece</option>
+                            <option>etude</option>
+                          </select>
+                    </div>
+                </div>
+                <input class="execsubmit" type="submit" value="search">
+            </form>
+        </aside>
 
-<h2>Cats that are not sleepy!</h2>
+   <content class=" container col-8 px-0 m-0 justify-content-center">
+       <h2>Results</h2>
 
-<ul>
-  {{#each cats}}
-    {{#unless sleepy}}
-      {{> cats/cat-block sleep=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
+<table class="table-striped table-bordered">
+  <thead>
+    <tr class="d-flex">
+      <th class="col-4">Book Title</th>
+      <th class="col-4">Composer</th>
+      <th class="col-4">Exercise #</th>
+       <th class="col-4">Musical Key</th>
+    </tr>
+  </thead>
+  <tbody>
 
-<h2>Cats that are sleepy!</h2>
+    {{#each exercises}}
+    <tr class="d-flex">
+      <td class="col-4">{{dataValues.book_title}}</td>
+      <td class="col-4">{{dataValues.author}}</td>
+      <td class="col-4">{{dataValues.exercise}}</td>
+      <td class="col-4">{{dataValues.musical_key}}</td>
+    </tr>
+      {{/each}}
+     </tbody>
+</table>
 
-<ul>
-  {{#each cats}}
-    {{#if sleepy}}
-      {{> cats/cat-block sleep=false}}
-    {{/if}}
-  {{/each}}
-</ul>
 
-<h2>Add a Cat</h2>
-<form class="create-form">
 
-  <div class="form-group">
-    <label for="ca">Cat Name:</label>
-    <input type="text" id="ca" name="name">
-  </div>
 
-  <div class="form-group">
-    <label for="sleepy">Sleepy?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0"> Awake
-  </div>
+</content>
 
-  <button type="submit">Add Cat</button>
-</form>
+    </main>
