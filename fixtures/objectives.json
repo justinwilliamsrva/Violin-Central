@@ -5,7 +5,7 @@
             "TeacherId": 1,
             "objective": "Our first lesson plan",
             "lesson_plan": "Here is the description for this lesson plan",
-            "exercises": [1,2,3]
+            "exercise": [1,2,3]
         }
     }
 ]

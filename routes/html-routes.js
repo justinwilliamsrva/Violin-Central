@@ -3,6 +3,10 @@ const path = require("path");
 
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
+const db = require("../models");
+const Sequelize = require("sequelize");
+// const Op = Sequelize.Op;
+const { Op } = require("sequelize");
 
 module.exports = function(app) {
   app.get("/", (req, res) => {
@@ -25,5 +29,33 @@ module.exports = function(app) {
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, "../public/members.html"));
+  });
+  app.get("/exercises", (req, res) => {
+    let { mainPosition } = req.query;
+    let { otherPosition } = req.query;
+    let { mainBowing } = req.query;
+    let { otherBowing } = req.query;
+    let { key } = req.query;
+    let { focus } = req.query;
+    let { type } = req.query;
+
+    db.exercises
+      .findAll({
+        where: {
+          [Op.and]: [
+            { primary_positions: { [Op.like]: "%" + mainPosition + "%" } },
+            // { secondary_positions: { [Op.like]: "%" + otherPosition + "%" } },
+            { primary_bowing: { [Op.like]: "%" + mainBowing + "%" } },
+            // { secondary_bowing: { [Op.like]: "%" + otherBowing + "%" } },
+            { musical_key: { [Op.like]: "%" + key + "%" } },
+            { focus: { [Op.like]: "%" + focus + "%" } },
+            { type: { [Op.like]: "%" + type + "%" } }
+          ]
+        }
+      })
+      .then(function(exercises) {
+        // console.log(exercises);
+        res.render("exercise", { exercises });
+      });
   });
 };
