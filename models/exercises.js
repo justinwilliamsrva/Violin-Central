@@ -26,7 +26,7 @@ module.exports = function(sequlize, Datatypes) {
     secondary_bowing: {
       type: Datatypes.STRING
     },
-    key: {
+    musical_key: {
       type: Datatypes.STRING,
       allowNull: false
     },
