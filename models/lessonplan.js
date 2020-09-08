@@ -1,16 +1,16 @@
 module.exports = function(sequelize, Datatypes) {
-  const lessonPlan = sequelize.define("lessonplan", {
+  const lessonPlan = sequelize.define("lessonplans", {
     ExerciseId: {
       type: Datatypes.INTEGER,
       references: {
-        model: Exercises,
+        model: "Exercises",
         key: "id"
       }
     },
     ObjectiveId: {
       type: Datatypes.INTEGER,
       references: {
-        model: Objectives,
+        model: "Objectives",
         key: "id"
       }
     }

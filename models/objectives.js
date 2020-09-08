@@ -9,15 +9,9 @@ module.exports = function(sequelize, Datatypes) {
     }
   });
   Objectives.associate = function(models) {
-    Objectives.belongsToMany(
-      models.Exercises,
-      {
-        through: "LessonPlan"
-      },
-      {
-        as: "objectives"
-      }
-    );
+    Objectives.belongsToMany(models.Exercises, {
+      through: "lessonplans"
+    });
   };
   Objectives.associate = function(models) {
     Objectives.belongsTo(models.Teachers, {

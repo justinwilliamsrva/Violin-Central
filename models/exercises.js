@@ -55,10 +55,10 @@ module.exports = function(sequelize, Datatypes) {
     Exercises.belongsToMany(
       models.Objectives,
       {
-        through: "LessonPlan"
+        through: "lessonplans"
       },
       {
-        as: "exercise"
+        as: "Exercises"
       }
     );
   };

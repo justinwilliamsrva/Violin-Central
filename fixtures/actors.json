@@ -1,0 +1,26 @@
+[
+    {
+        "model": "actors",
+        "data": {
+            "name": "Tom Hanks"
+        }
+    },
+    {
+        "model": "actors",
+        "data": {
+            "name": "Gary Snese"
+        }
+    },
+    {
+        "model": "actors",
+        "data": {
+            "name": "Bill Paxton"
+        }
+    },
+    {
+        "model": "actors",
+        "data": {
+            "name": "Kurt Russell"
+        }
+    }
+]
