@@ -1,4 +1,26 @@
 form.signup,
 form.login {
-  margin-top: 50px;
+    margin-top: 50px;
+}
+
+.bn {
+    width: 30%;
+    height: 90%;
+}
+
+.rowbn {
+    /* padding-top: 10px; */
+    height: 30vh;
+}
+
+h1 {
+    text-align: center;
+}
+
+.membera {
+    color: white;
+    font-size: 25px;
+}
+.membera:hover {
+    color: black;
 }

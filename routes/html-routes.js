@@ -55,6 +55,35 @@ module.exports = function(app) {
       })
       .then(function(exercises) {
         // console.log(exercises);
+        res.render("lessons", { exercises });
+      });
+  });
+
+  app.get("/lessons", (req, res) => {
+    let { objective } = req.query;
+    let { lesson } = req.query;
+    let { mainBowing } = req.query;
+    let { otherBowing } = req.query;
+    let { key } = req.query;
+    let { focus } = req.query;
+    let { type } = req.query;
+
+    db.exercises
+      .findAll({
+        where: {
+          [Op.and]: [
+            { primary_positions: { [Op.like]: "%" + mainPosition + "%" } },
+            // { secondary_positions: { [Op.like]: "%" + otherPosition + "%" } },
+            { primary_bowing: { [Op.like]: "%" + mainBowing + "%" } },
+            // { secondary_bowing: { [Op.like]: "%" + otherBowing + "%" } },
+            { musical_key: { [Op.like]: "%" + key + "%" } },
+            { focus: { [Op.like]: "%" + focus + "%" } },
+            { type: { [Op.like]: "%" + type + "%" } }
+          ]
+        }
+      })
+      .then(function(exercises) {
+        // console.log(exercises);
         res.render("exercise", { exercises });
       });
   });
