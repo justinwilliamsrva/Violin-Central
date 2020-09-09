@@ -1,11 +1,27 @@
 module.exports = function(sequelize, Datatypes) {
   const movies = sequelize.define("movies", {
-    name: Datatypes.STRING
+    objective: {
+      type: Datatypes.STRING,
+      allowNull: false
+    },
+    lesson_plan: {
+      type: Datatypes.TEXT
+    }
   });
   movies.associate = function(models) {
     movies.belongsToMany(models.actors, {
-      through: "ActorMovies"
+      through: "actormovies"
     });
   };
+  // movies.associate = function(models) {
+  //   movies.hasMany(models.actorsmovies);
+  // };
+  // movies.associate = function(models) {
+  //   movies.belongsTo(models.Teachers, {
+  //     foreignKey: {
+  //       allowNull: false
+  //     }
+  //   });
+  // };
   return movies;
 };

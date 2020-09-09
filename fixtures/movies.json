@@ -2,29 +2,25 @@
     {
         "model": "movies",
         "data": {
-            "name": "Forrest Gump",
+            "objective": "Our first lesson plan",
+            "lesson_plan": "Here is the description for this lesson plan",
             "actors": [1,2]
         }
     },
     {
         "model": "movies",
         "data": {
-            "name": "Appllo 13",
-            "actors": [1,2,3]
+            "objective": "Another lesson plan",
+            "lesson_plan": "Play violin",
+            "actors": [1,3]
         }
     },
     {
         "model": "movies",
         "data": {
-            "name": "Tombstone",
-            "actors": [3,4]
-        }
-    },
-    {
-        "model": "movies",
-        "data": {
-            "name": "Big Trouble In Little China",
-            "actors": [4]
+            "objective": "Music to my ears",
+            "lesson_plan": "Maybe this one is harder",
+            "actors": [2,3]
         }
     }
 ]

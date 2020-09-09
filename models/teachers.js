@@ -42,10 +42,10 @@ module.exports = function(sequlize, Datatypes) {
     );
   });
 
-  Teachers.associate = function(models) {
-    Teachers.hasMany(models.Objectives, {
-      onDelete: "cascade"
-    });
-  };
+  // Teachers.associate = function(models) {
+  //   Teachers.hasMany(models.movies, {
+  //     onDelete: "cascade"
+  //   });
+  // };
   return Teachers;
 };
