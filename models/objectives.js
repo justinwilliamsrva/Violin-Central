@@ -1,5 +1,5 @@
-module.exports = function(sequlize, Datatypes) {
-  const Objectives = sequlize.define("Objectives", {
+module.exports = function(sequelize, Datatypes) {
+  const Objectives = sequelize.define("Objectives", {
     objective: {
       type: Datatypes.STRING,
       allowNull: false
@@ -10,11 +10,7 @@ module.exports = function(sequlize, Datatypes) {
   });
   Objectives.associate = function(models) {
     Objectives.belongsToMany(models.Exercises, {
-      through: "LessonPlan",
-      foreignKey: {
-        allowNull: false
-      },
-      as: "exercise"
+      through: "lessonplans"
     });
   };
   Objectives.associate = function(models) {

@@ -1,0 +1,26 @@
+[
+    {
+        "model": "movies",
+        "data": {
+            "objective": "Our first lesson plan",
+            "lesson_plan": "Here is the description for this lesson plan",
+            "actors": [1,2]
+        }
+    },
+    {
+        "model": "movies",
+        "data": {
+            "objective": "Another lesson plan",
+            "lesson_plan": "Play violin",
+            "actors": [1,3]
+        }
+    },
+    {
+        "model": "movies",
+        "data": {
+            "objective": "Music to my ears",
+            "lesson_plan": "Maybe this one is harder",
+            "actors": [2,3]
+        }
+    }
+]

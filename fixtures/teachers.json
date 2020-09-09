@@ -1,0 +1,35 @@
+[
+    {
+        "model": "Teachers",
+        "data": {
+            "first_name": "Justin",
+            "last_name": "Williams",
+            "city": "Richmond",
+            "state": "Virginia",
+            "email": "justin.williams2@me.com",
+            "password": "thispassword"
+        }
+    },
+    {
+        "model": "Teachers",
+        "data": {
+            "first_name": "Katie",
+            "last_name": "Woolridge",
+            "city": "Richmond",
+            "state": "Virginia",
+            "email": "katharine.wooldridge@gmail.com",
+            "password": "ViolinForKids"
+        }
+    },
+    {
+        "model": "Teachers",
+        "data": {
+            "first_name": "Author",
+            "last_name": "Giles",
+            "city": "Henrico",
+            "state": "Virginia",
+            "email": "fingerforts@gmail.com",
+            "password": "cantguessthis"
+        }
+    }
+]

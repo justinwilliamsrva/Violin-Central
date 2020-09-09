@@ -1,0 +1,11 @@
+[
+    {
+        "model": "Objectives",
+        "data": {
+            "TeacherId": 1,
+            "objective": "Our first lesson plan",
+            "lesson_plan": "Here is the description for this lesson plan",
+            "Exercises": [1,2,3]
+        }
+    }
+]

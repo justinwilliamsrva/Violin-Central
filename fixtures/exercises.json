@@ -1,0 +1,59 @@
+[
+    {
+        "model": "Exercises",
+        "data": {
+            "exercise": 1,
+            "book_title": "42 Etudes for Violin",
+            "author_composer": "Kreutzer, Rodolphe",
+            "primary_positions": "1",
+            "secondary_positions": "2, 3, 4",
+            "primary_bowing": "legato",
+            "secondary_bowing": null,
+            "musical_key": "A Minor",
+            "difficulty": "Medium",
+            "focus": "Tone",
+            "type": "Etude",
+            "image": null,
+            "link": null,
+            "book_description": null
+        }
+    },
+    {
+        "model": "Exercises",
+        "data": {
+            "exercise": 2,
+            "book_title": "42 Etudes for Violin",
+            "author_composer": "Kreutzer, Rodolphe",
+            "primary_positions": "1",
+            "secondary_positions": "2, 3, 4",
+            "primary_bowing": "legato",
+            "secondary_bowing": null,
+            "musical_key": "C Major",
+            "difficulty": "Medium",
+            "focus": "Facility",
+            "type": "Etude",
+            "image": null,
+            "link": null,
+            "book_description": null
+        } 
+    },
+    {
+        "model": "Exercises",
+        "data": {
+            "exercise": 3,
+            "book_title": "42 Etudes for Violin",
+            "author_composer": "Kreutzer, Rodolphe",
+            "primary_positions": "1",
+            "secondary_positions": "2, 3, 4, 5, 5+",
+            "primary_bowing": "detache",
+            "secondary_bowing": null,
+            "musical_key": "C Major",
+            "difficulty": "Medium",
+            "focus": "Facility",
+            "type": "Etude",
+            "image": null,
+            "link": null,
+            "book_description": null
+        } 
+    }
+]

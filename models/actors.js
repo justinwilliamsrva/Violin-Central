@@ -1,5 +1,5 @@
 module.exports = function(sequelize, Datatypes) {
-  const Exercises = sequelize.define("Exercises", {
+  const actors = sequelize.define("actors", {
     exercise: {
       type: Datatypes.DECIMAL(3, 1),
       allowNull: false
@@ -51,16 +51,13 @@ module.exports = function(sequelize, Datatypes) {
       type: Datatypes.TEXT
     }
   });
-  Exercises.associate = function(models) {
-    Exercises.belongsToMany(
-      models.Objectives,
-      {
-        through: "lessonplans"
-      },
-      {
-        as: "Exercises"
-      }
-    );
+  actors.associate = function(models) {
+    actors.belongsToMany(models.movies, {
+      through: "actormovies"
+    });
   };
-  return Exercises;
+  actors.associate = function(models) {
+    actors.hasMany(models.actorsmovies);
+  };
+  return actors;
 };
