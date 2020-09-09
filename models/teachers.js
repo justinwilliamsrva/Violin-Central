@@ -43,9 +43,15 @@ module.exports = function(sequlize, Datatypes) {
   });
 
   // Teachers.associate = function(models) {
-  //   Teachers.hasMany(models.movies, {
-  //     onDelete: "cascade"
-  //   });
+  //   Teachers.hasMany(
+  //     models.Objectives,
+  //     {
+  //       onDelete: "cascade"
+  //     },
+  //     {
+  //       constraints: false
+  //     }
+  //   );
   // };
   return Teachers;
 };

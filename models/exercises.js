@@ -52,15 +52,9 @@ module.exports = function(sequelize, Datatypes) {
     }
   });
   Exercises.associate = function(models) {
-    Exercises.belongsToMany(
-      models.Objectives,
-      {
-        through: "lessonplans"
-      },
-      {
-        as: "Exercises"
-      }
-    );
+    Exercises.belongsToMany(models.Objectives, {
+      through: "lessonplans"
+    });
   };
   return Exercises;
 };

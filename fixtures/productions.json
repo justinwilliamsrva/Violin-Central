@@ -1,0 +1,20 @@
+[
+    {
+        "model": "productions",
+        "data": {
+            "productionName": "Warner Brothers"
+        }
+    },
+    {
+        "model": "productions",
+        "data": {
+            "productionName": "20th Century Fox"
+        }
+    },
+    {
+        "model": "productions",
+        "data": {
+            "productionName": "Universal"
+        }
+    }
+]

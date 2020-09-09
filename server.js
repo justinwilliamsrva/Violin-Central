@@ -43,9 +43,7 @@ db.sequelize.sync({ force: true }).then(() => {
       [
         "fixtures/exercises.json",
         "fixtures/teachers.json",
-        "fixtures/objectives.json",
-        "fixtures/actors.json",
-        "fixtures/movies.json"
+        "fixtures/objectives.json"
       ],
       models
     )

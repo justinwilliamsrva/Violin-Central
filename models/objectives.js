@@ -13,12 +13,12 @@ module.exports = function(sequelize, Datatypes) {
       through: "lessonplans"
     });
   };
-  Objectives.associate = function(models) {
-    Objectives.belongsTo(models.Teachers, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  };
+  // Objectives.associate = function(models) {
+  //   Objectives.belongsTo(models.Teachers, {
+  //     foreignKey: {
+  //       allowNull: false
+  //     }
+  //   });
+  // };
   return Objectives;
 };
