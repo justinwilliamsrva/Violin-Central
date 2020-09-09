@@ -24,3 +24,9 @@ h1 {
 .membera:hover {
     color: black;
 }
+
+.col-md-6{
+  background-image: linear-gradient(to right, brown , yellow);;
+}
+
+.row
