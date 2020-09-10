@@ -65,7 +65,7 @@ module.exports = function(app) {
             where: {
                 [Op.and]: [
                     { primary_positions: { [Op.like]: "%" + mainPosition + "%" } },
-                    { secondary_positions: { [Op.like]: "%" + otherPosition + "%" } },
+                    // { secondary_positions: { [Op.like]: "%" + otherPosition + "%" } },
                     { primary_bowing: { [Op.like]: "%" + mainBowing + "%" } },
                     // { secondary_bowing: { [Op.like]: "%" + otherBowing + "%" } },
                     { musical_key: { [Op.like]: "%" + key + "%" } },
@@ -77,5 +77,10 @@ module.exports = function(app) {
             // console.log(exercises);
             res.render("exercise", { exercises });
         });
+    });
+
+    app.post("/lessons/add", (req, res) => {
+        let { objective, lesson_plan } = req.body;
+        db.Objectives.create({ objective, lesson_plan }).then((Objective) => res.redirect("/lessons"));
     });
 };
