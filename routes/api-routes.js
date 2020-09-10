@@ -67,7 +67,7 @@ module.exports = function(app) {
                     { primary_positions: { [Op.like]: "%" + mainPosition + "%" } },
                     { secondary_positions: { [Op.like]: "%" + otherPosition + "%" } },
                     { primary_bowing: { [Op.like]: "%" + mainBowing + "%" } },
-                    { secondary_bowing: { [Op.like]: "%" + otherBowing + "%" } },
+                    // { secondary_bowing: { [Op.like]: "%" + otherBowing + "%" } },
                     { musical_key: { [Op.like]: "%" + key + "%" } },
                     { focus: { [Op.like]: "%" + focus + "%" } },
                     { type: { [Op.like]: "%" + type + "%" } },
@@ -75,7 +75,7 @@ module.exports = function(app) {
             },
         }).then(function(exercises) {
             // console.log(exercises);
-            res.render("lessons", { exercises });
+            res.render("exercise", { exercises });
         });
     });
 };
