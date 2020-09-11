@@ -101,7 +101,7 @@ module.exports = function(app) {
             type,
         } = req.body;
 
-        res.render("postexercise", {
+        res.render("post_exercise", {
             exercise,
             book_title,
             author_composer,
@@ -129,5 +129,12 @@ module.exports = function(app) {
             focus,
             type,
         }).then((exercises) => res.redirect("/exercises/add"));
+    });
+
+    app.get("/lessons", (req, res) => {
+        db.Objectives.findAll({}).then(function(objectives) {
+            console.log(objectives);
+            res.render("all_lessons", { objectives });
+        });
     });
 };
