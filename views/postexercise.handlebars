@@ -9,72 +9,140 @@
             <form action="/exercises/add" method="POST">
         {{!-- Title --}}
         <div class="input-group">
-          <label for="title">Book Title</label>
+          <label  class="px-2" for="title">Book Title</label>
           <input type="text" name="book_title"  class="input-box"
             maxlength="100" value={{book_title}}>
         </div>
         {{!-- Author --}}
         <div class="input-group">
-          <label for="title">Composer</label>
+          <label  class="px-2" for="title">Composer</label>
           <input type="text" name="author_composer"  class="input-box"
             maxlength="100" value={{author_composer}}>
         </div>
         {{!-- Exercise Number --}}
           <div class="input-group">
-          <label for="title">Exercise #</label>
+          <label  class="px-2" for="title">Exercise #</label>
           <input type="text" name="exercise"  class="input-box"
             maxlength="100" value={{exercise}}>
         </div>
          {{!-- Primary Position --}}
           <div class="input-group">
-          <label for="title">Primary Positions</label>
-          <input type="text" name="primary_positions"  class="input-box"
-            maxlength="100" value={{primary_positions}}>
+  <label class="px-2" for="mainpos">Primary Position</label>
+                        <select class="form-control" name="primary_positions" value={{primary_positions}}>
+                            <option>1/2</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>5+</option>
+                          </select>
+
         </div>
          {{!-- Secondary Position --}}
           <div class="input-group">
-          <label for="title">Secondary Positions</label>
-          <input type="text" name="secondary_positions"  class="input-box"
-            maxlength="100" value={{secondary_positions}}>
+            <label class="px-2" for="mainpos">Secondary Positions</label>
+                        <select class="form-control" name="secondary_positions" value={{secondary_positions}}>
+                            <option>1/2</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>5+</option>
+                          </select>
         </div>
          {{!-- Primary Bowing --}}
           <div class="input-group">
-          <label for="title">Primary Bowing</label>
-          <input type="text" name="primary_bowing"  class="input-box"
-            maxlength="100" value={{primary_bowing}}>
+            <label class="px-2" for="mainpos">Primary bowing</label>
+                        <select class="form-control" name="primary_bowing" value={{primary_bowing}}>
+                            <option>detache</option>
+                            <option>legato</option>
+                            <option>staccato</option>
+                            <option>spiccato</option>
+
+                          </select>
         </div>
          {{!-- Secondary Bowing --}}
           <div class="input-group">
-          <label for="title">Secondary Bowing</label>
-          <input type="text" name="secondary_bowing"  class="input-box"
-            maxlength="100" value={{secondary_bowing}}>
+            <label class="px-2" for="mainpos">Secondary bowing</label>
+                        <select class="form-control" name="secondary_bowing
+                        " value={{secondary_bowing
+                        }}>
+                            <option>detache</option>
+                            <option>legato</option>
+                            <option>staccato</option>
+                            <option>spiccato</option>
+
+                          </select>
         </div>
          {{!-- Musical Key --}}
           <div class="input-group">
-          <label for="title">Key</label>
-          <input type="text" name="musical_key"  class="input-box"
-            maxlength="100" value={{musical_key}}>
+          <label  class="px-2" for="title">Key</label>
+         <select class="form-control" name="musical_key" value={{musical_key}}>
+                             <option>C major</option>
+                            <option>G major</option>
+                            <option>D major</option>
+                            <option>A major</option>
+                            <option>E major</option>
+                            <option>B major</option>
+                            <option>F# major</option>
+                            <option>Db major</option>
+                            <option>Ab major</option>
+                            <option>Eb major</option>
+                            <option>Bb major</option>
+                            <option>F major</option>
+                            <option>C minor</option>
+                            <option>G minor</option>
+                            <option>D minor</option>
+                            <option>A minor</option>
+                            <option>E minor</option>
+                            <option>B minor</option>
+                            <option>F# minor</option>
+                            <option>C# minor</option>
+                            <option>G# minor</option>
+                            <option>Eb minor</option>
+                            <option>Bb minor</option>
+                            <option>F minor</option>
+
+                          </select>
+
         </div>
          {{!-- Difficulty --}}
           <div class="input-group">
-          <label for="title">Difficulty</label>
-          <input type="text" name="difficulty"  class="input-box"
-            maxlength="100" value={{difficulty}}>
+          <label  class="px-2" for="difficulty">Difficulty</label>
+          <select class="form-control" name="difficulty" value={{difficulty}}>
+
+                            <option>beginner</option>
+                            <option>easy</option>
+                            <option>medium</option>
+                            <option>advanced</option>
+                            <option>expert</option>
+                          </select>
         </div>
          {{!-- Focus --}}
           <div class="input-group">
-          <label for="title">Focus</label>
-          <input type="text" name="focus"  class="input-box"
-            maxlength="100" value={{focus}}>
+       <label  class="px-2" for="focus">Focus</label>
+          <select class="form-control" name="focus" value={{focus}}>
+           <option>N/A</option>
+                            <option>facility</option>
+                            <option>shifting</option>
+                            <option>intonation</option>
+                            <option>tone</option>
+                          </select>
         </div>
          {{!-- Type--}}
           <div class="input-group">
-          <label for="title">Type</label>
-          <input type="text" name="type"  class="input-box"
-            maxlength="100" value={{type}}>
+     <label  class="px-2" for="Type">Type</label>
+          <select class="form-control" name="type" value={{type}}>
+          <option>piece</option>
+                            <option>etude</option>
+                          </select>
         </div>
+        <div class="px-2">
         <input class="execsubmit" type="submit" value="Add Lesson">
         <input type="reset">
+        </div>
 
       </form>
     </div>
