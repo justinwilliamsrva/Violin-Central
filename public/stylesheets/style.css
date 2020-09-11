@@ -29,7 +29,22 @@ h1 {
     background-image: linear-gradient(to right, brown, yellow);
 }
 @media only screen and (max-width: 768px) {
-    .rowbn {
-        display: block;
+    .bn {
+        width: 50%;
+    }
+
+    .bn-sm {
+        margin-bottom: 30px;
+    }
+}
+
+
+@media only screen and (max-width: 400px) {
+    .bn {
+        width: 75%;
+    }
+
+    .bn-sm {
+        margin-bottom: 30px;
     }
 }
