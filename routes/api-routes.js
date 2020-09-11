@@ -81,6 +81,53 @@ module.exports = function(app) {
 
     app.post("/lessons/add", (req, res) => {
         let { objective, lesson_plan } = req.body;
-        db.Objectives.create({ objective, lesson_plan }).then((Objective) => res.redirect("/lessons"));
+        db.Objectives.create({ objective, lesson_plan }).then((Objective) =>
+            res.redirect("/lessons")
+        );
+    });
+
+    app.post("/exercises/add", (req, res) => {
+        let {
+            exercise,
+            book_title,
+            author_composer,
+            primary_positions,
+            secondary_positions,
+            primary_bowing,
+            secondary_bowing,
+            musical_key,
+            difficulty,
+            focus,
+            type,
+        } = req.body;
+
+        res.render("postexercise", {
+            exercise,
+            book_title,
+            author_composer,
+            primary_positions,
+            secondary_positions,
+            primary_bowing,
+            secondary_bowing,
+            musical_key,
+            difficulty,
+            focus,
+            type,
+        });
+
+        // Insert into table
+        db.Exercises.create({
+            exercise,
+            book_title,
+            author_composer,
+            primary_positions,
+            secondary_positions,
+            primary_bowing,
+            secondary_bowing,
+            musical_key,
+            difficulty,
+            focus,
+            type,
+        }).then((exercises) => res.redirect("/exercises/add"));
     });
 };

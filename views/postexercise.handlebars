@@ -6,74 +6,76 @@
   <main class="container my-5">
 <div class="row justify-content-center">
         <aside class="d-flex justify-content-center col-12 px-0 m-0  ">
-            <form action="/lessons/add" method="POST">
+            <form action="/exercises/add" method="POST">
         {{!-- Title --}}
         <div class="input-group">
           <label for="title">Book Title</label>
-          <input type="text" name="objective"  class="input-box"
-            maxlength="100" value={{title}}>
+          <input type="text" name="book_title"  class="input-box"
+            maxlength="100" value={{book_title}}>
         </div>
         {{!-- Author --}}
         <div class="input-group">
           <label for="title">Composer</label>
-          <input type="text" name="objective"  class="input-box"
-            maxlength="100" value={{title}}>
+          <input type="text" name="author_composer"  class="input-box"
+            maxlength="100" value={{author_composer}}>
         </div>
         {{!-- Exercise Number --}}
           <div class="input-group">
           <label for="title">Exercise #</label>
-          <input type="text" name="objective"  class="input-box"
-            maxlength="100" value={{title}}>
+          <input type="text" name="exercise"  class="input-box"
+            maxlength="100" value={{exercise}}>
         </div>
          {{!-- Primary Position --}}
           <div class="input-group">
           <label for="title">Primary Positions</label>
-          <input type="text" name="objective"  class="input-box"
-            maxlength="100" value={{title}}>
+          <input type="text" name="primary_positions"  class="input-box"
+            maxlength="100" value={{primary_positions}}>
         </div>
          {{!-- Secondary Position --}}
           <div class="input-group">
           <label for="title">Secondary Positions</label>
-          <input type="text" name="objective"  class="input-box"
-            maxlength="100" value={{title}}>
+          <input type="text" name="secondary_positions"  class="input-box"
+            maxlength="100" value={{secondary_positions}}>
         </div>
          {{!-- Primary Bowing --}}
           <div class="input-group">
           <label for="title">Primary Bowing</label>
-          <input type="text" name="objective"  class="input-box"
-            maxlength="100" value={{title}}>
+          <input type="text" name="primary_bowing"  class="input-box"
+            maxlength="100" value={{primary_bowing}}>
         </div>
          {{!-- Secondary Bowing --}}
           <div class="input-group">
           <label for="title">Secondary Bowing</label>
-          <input type="text" name="objective"  class="input-box"
-            maxlength="100" value={{title}}>
+          <input type="text" name="secondary_bowing"  class="input-box"
+            maxlength="100" value={{secondary_bowing}}>
         </div>
          {{!-- Musical Key --}}
           <div class="input-group">
           <label for="title">Key</label>
-          <input type="text" name="objective"  class="input-box"
-            maxlength="100" value={{title}}>
+          <input type="text" name="musical_key"  class="input-box"
+            maxlength="100" value={{musical_key}}>
         </div>
          {{!-- Difficulty --}}
           <div class="input-group">
           <label for="title">Difficulty</label>
-          <input type="text" name="objective"  class="input-box"
-            maxlength="100" value={{title}}>
+          <input type="text" name="difficulty"  class="input-box"
+            maxlength="100" value={{difficulty}}>
         </div>
          {{!-- Focus --}}
           <div class="input-group">
           <label for="title">Focus</label>
-          <input type="text" name="objective"  class="input-box"
-            maxlength="100" value={{title}}>
+          <input type="text" name="focus"  class="input-box"
+            maxlength="100" value={{focus}}>
         </div>
          {{!-- Type--}}
           <div class="input-group">
           <label for="title">Type</label>
-          <input type="text" name="objective"  class="input-box"
-            maxlength="100" value={{title}}>
+          <input type="text" name="type"  class="input-box"
+            maxlength="100" value={{type}}>
         </div>
-        <input type="submit" value="Add Lesson" class="btn btn-reverse">
+        <input class="execsubmit" type="submit" value="Add Lesson">
+        <input type="reset">
+
       </form>
     </div>
         </aside>
