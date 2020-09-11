@@ -123,26 +123,26 @@
             </form>
         </aside>
 
-   <content class=" container col-8 px-0 m-0 justify-content-center">
+   <content class=" container col-8 px-5 m-0 justify-content-center">
        <h2>Results</h2>
 
 <table class="table-striped table-bordered">
   <thead>
     <tr class="d-flex">
-      <th class="col-4">Book Title</th>
-      <th class="col-4">Composer</th>
-      <th class="col-4">Exercise #</th>
-       <th class="col-4">Musical Key</th>
+      <th class="col-3">Book Title</th>
+      <th class="col-3">Composer</th>
+      <th class="col-3">Exercise #</th>
+       <th class="col-3">Musical Key</th>
     </tr>
   </thead>
   <tbody>
 
     {{#each exercises}}
     <tr class="d-flex">
-      <td class="col-4">{{dataValues.book_title}}</td>
-      <td class="col-4">{{dataValues.author_composer}}</td>
-      <td class="col-4">{{dataValues.exercise}}</td>
-      <td class="col-4">{{dataValues.musical_key}}</td>
+      <td class="col-3">{{dataValues.book_title}}</td>
+      <td class="col-3">{{dataValues.author_composer}}</td>
+      <td class="col-3">{{dataValues.exercise}}</td>
+      <td class="col-3">{{dataValues.musical_key}}</td>
     </tr>
       {{/each}}
      </tbody>

@@ -3,6 +3,11 @@ form.login {
     margin-top: 50px;
 }
 
+#nav-link {
+    color: black;
+    text-decoration: none;
+}
+
 .bn {
     width: 30%;
     /* height: 90%; */
@@ -13,7 +18,8 @@ form.login {
     /* height: 30vh; */
 }
 
-h1 {
+h1,
+h3 {
     text-align: center;
 }
 
@@ -37,7 +43,6 @@ h1 {
         margin-bottom: 30px;
     }
 }
-
 
 @media only screen and (max-width: 400px) {
     .bn {
