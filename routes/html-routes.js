@@ -32,4 +32,6 @@ module.exports = function(app) {
     });
 
     app.get("/lessons/add", (req, res) => res.render("addlessons"));
+
+    app.get("/exercises/add", (req, res) => res.render("postexercise"));
 };
