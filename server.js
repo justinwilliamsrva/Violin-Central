@@ -3,6 +3,7 @@ const express = require("express");
 const session = require("express-session");
 const sequelizeFixtures = require("sequelize-fixtures");
 const models = require("./models");
+const bodyParser = require("body-parser");
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
 const exphbs = require("express-handlebars");
@@ -17,6 +18,8 @@ const app = express();
 // Handlebars
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

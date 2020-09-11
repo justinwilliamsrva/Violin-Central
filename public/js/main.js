@@ -24,6 +24,7 @@ $(document).ready(() => {
       if (searchParams.focus === "N/A") {
         searchParams.focus = null;
       }
+      console.log("Search Parameters", searchParams);
 
       $.ajax("/api/exercises", {
         type: "GET",

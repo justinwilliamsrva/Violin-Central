@@ -52,25 +52,25 @@ module.exports = function(app) {
     }
   });
 
-  app.get("/exercises", (req, res) => {
-    const { mainPosition } = req.body.searchParams.mainPosition;
-    const { otherPosition } = req.body.searchParams.secondPosition;
-    const { mainBowing } = req.body.searchParams.mainBowing;
-    const { otherBowing } = req.body.searchParams.secondBowing;
-    const { key } = req.body.searchParams.key;
-    const { focus } = req.body.searchParams.focus;
-    const { type } = req.body.searchParams.type;
+  app.get("/api/exercises", (req, res) => {
+    const mainPosition = req.body.searchParams.mainPosition;
+    const otherPosition = req.body.searchParams.secondPosition;
+    const mainBowing = req.body.searchParams.mainBowing;
+    const otherBowing = req.body.searchParams.secondBowing;
+    const key = req.body.searchParams.key;
+    const focus = req.body.searchParams.focus;
+    const type = req.body.searchParams.type;
 
     db.Exercises.findAll({
       where: {
         [Op.and]: [
-          { primary_positions: { [Op.like]: "%" + mainPosition + "%" } },
-          { secondary_positions: { [Op.like]: "%" + otherPosition + "%" } },
-          { primary_bowing: { [Op.like]: "%" + mainBowing + "%" } },
-          { secondary_bowing: { [Op.like]: "%" + otherBowing + "%" } },
-          { musical_key: { [Op.like]: "%" + key + "%" } },
-          { focus: { [Op.like]: "%" + focus + "%" } },
-          { type: { [Op.like]: "%" + type + "%" } }
+          { primary_positions: mainPosition },
+          { secondary_positions: otherPosition },
+          { primary_bowing: mainBowing },
+          { secondary_bowing: otherBowing },
+          { musical_key: key },
+          { focus: focus },
+          { type: type }
         ]
       }
     }).then(function(exercises) {

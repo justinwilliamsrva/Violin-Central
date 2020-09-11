@@ -3,10 +3,7 @@ const path = require("path");
 
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
-const db = require("../models");
-const Sequelize = require("sequelize");
 // const Op = Sequelize.Op;
-const { Op } = require("sequelize");
 
 module.exports = function(app) {
   app.get("/", (req, res) => {
@@ -31,5 +28,9 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
 
+  app.get("/lessons/add", (req, res) => res.render("addlessons"));
 
+  app.get("/exercies", isAuthenticated, (req, res) => {
+    res.sendFile(path.join(__dirname, "../views/exercise.handlebars"));
+  });
 };
