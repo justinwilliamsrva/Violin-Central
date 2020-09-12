@@ -3,7 +3,7 @@ $(function() {
     event.preventDefault();
 
     const searchParams = {
-      mainPosition: $("#mainpos"),
+      mainPosition: $("#mainpos").val(),
       secondPosition: $("#pos2"),
       mainBowing: $("#mainbow"),
       secondBowing: $("#bow2"),
@@ -13,7 +13,7 @@ $(function() {
       type: $("#type")
     };
 
-    $ajax("/api/exercises", {
+    $.ajax("/api/exercises", {
       type: "GET",
       data: searchParams
     }).then(function() {
