@@ -53,97 +53,91 @@ module.exports = function(app) {
   });
 
   app.get("/api/exercises", (req, res) => {
-    console.log(req.body);
-    const mainPosition = req.body.searchParams.mainPosition;
-    const otherPosition = req.body.searchParams.secondPosition;
-    const mainBowing = req.body.searchParams.mainBowing;
-    const otherBowing = req.body.searchParams.secondBowing;
-    const key = req.body.searchParams.key;
-    const focus = req.body.searchParams.focus;
-    const type = req.body.searchParams.type;
-    console.log("mainPosition", mainPosition);
-    console.log("otherPosition", otherPosition);
-    console.log("mainBowing", mainBowing);
-    console.log("otherBowing", otherBowing);
-    console.log("key", key);
-    console.log("focus", focus);
-    console.log("type", type);
-
-<<<<<<< HEAD
+    console.log(req.query);
+    const mainPosition = req.query.mainPosition;
+    const otherPosition = req.query.secondPosition;
+    const mainBowing = req.query.mainBowing;
+    const otherBowing = req.query.secondBowing;
+    const key = req.query.key;
+    const difficulty = req.query.difficulty;
+    const focus = req.query.focus;
+    const type = req.query.type;
+    console.log("mainPosition ", mainPosition);
     db.Exercises.findAll({
       where: {
         [Op.and]: [
-          { primary_positions: mainPosition },
-          { secondary_positions: otherPosition },
-          { primary_bowing: mainBowing },
-          { secondary_bowing: otherBowing },
-          { musical_key: key },
-          { focus: focus },
-          { type: type }
+          { primary_positions: { [Op.like]: mainPosition } },
+          // { secondary_positions: { [Op.like]: "%" + otherPosition + "%" } },
+          { primary_bowing: { [Op.like]: mainBowing } },
+          // { secondary_bowing: { [Op.like]: "%" + otherBowing + "%" } },
+          { musical_key: { [Op.like]: key } },
+          { difficulty: { [Op.like]: difficulty } },
+          { focus: { [Op.like]: focus } },
+          { type: { [Op.like]: type } }
         ]
       }
     }).then(function(exercises) {
-      console.log(exercises);
+      console.log("exercises", exercises);
+      console.log("Book Title", exercises[0].dataValues.book_title);
       res.render("exercise", { exercises });
-=======
-    app.post("/lessons/add", (req, res) => {
-        let { objective, lesson_plan } = req.body;
-        db.Objectives.create({ objective, lesson_plan }).then((Objective) =>
-            res.redirect("/lessons")
-        );
+    });
+  });
+
+  app.post("/lessons/add", (req, res) => {
+    const { objective, lesson_plan } = req.body;
+    db.Objectives.create({ objective, lesson_plan }).then(() => res.redirect("/lessons")
+    );
+  });
+
+  app.post("/exercises/add", (req, res) => {
+    const {
+      exercise,
+      book_title,
+      author_composer,
+      primary_positions,
+      secondary_positions,
+      primary_bowing,
+      secondary_bowing,
+      musical_key,
+      difficulty,
+      focus,
+      type
+    } = req.body;
+
+    res.render("post_exercise", {
+      exercise,
+      book_title,
+      author_composer,
+      primary_positions,
+      secondary_positions,
+      primary_bowing,
+      secondary_bowing,
+      musical_key,
+      difficulty,
+      focus,
+      type
     });
 
-    app.post("/exercises/add", (req, res) => {
-        let {
-            exercise,
-            book_title,
-            author_composer,
-            primary_positions,
-            secondary_positions,
-            primary_bowing,
-            secondary_bowing,
-            musical_key,
-            difficulty,
-            focus,
-            type,
-        } = req.body;
+    // Insert into table
+    db.Exercises.create({
+      exercise,
+      book_title,
+      author_composer,
+      primary_positions,
+      secondary_positions,
+      primary_bowing,
+      secondary_bowing,
+      musical_key,
+      difficulty,
+      focus,
+      type
+    }).then(() => res.redirect("/exercises/add"));
+  });
 
-        res.render("post_exercise", {
-            exercise,
-            book_title,
-            author_composer,
-            primary_positions,
-            secondary_positions,
-            primary_bowing,
-            secondary_bowing,
-            musical_key,
-            difficulty,
-            focus,
-            type,
-        });
-
-        // Insert into table
-        db.Exercises.create({
-            exercise,
-            book_title,
-            author_composer,
-            primary_positions,
-            secondary_positions,
-            primary_bowing,
-            secondary_bowing,
-            musical_key,
-            difficulty,
-            focus,
-            type,
-        }).then((exercises) => res.redirect("/exercises/add"));
-    });
-
-    app.get("/lessons", (req, res) => {
-        db.Objectives.findAll({}).then(function(objectives) {
-            console.log(objectives);
-            res.render("all_lessons", { objectives });
-        });
->>>>>>> master
+  app.get("/lessons", (req, res) => {
+    db.Objectives.findAll({}).then(function(objectives) {
+      console.log(objectives);
+      res.render("all_lessons", { objectives });
     });
   });
 };
