@@ -3,7 +3,7 @@
      <div class="d-flex justify-content-center"id="header">
       <h1>Add a Lesson Plan</h1>
       </div>
-     
+
       <form action="/lessons/add" method="POST">
         <div class="form-group">
           <label for="objective">Objective</label>
@@ -23,7 +23,7 @@
                         <select class="form-control" name="Exercises" id="exercises" multiple >
  {{#each exercises}}
 
-                            <option>{{dataValues.book_objective}} -  Exercise# {{dataValues.exercise}}</option>
+                            <option>{{dataValues.book_title}} -  Exercise# {{dataValues.exercise}}</option>
                              {{/each}}
 
                         </select>
