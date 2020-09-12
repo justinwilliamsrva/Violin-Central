@@ -35,5 +35,7 @@ module.exports = function(app) {
 
     app.get("/exercises/add", (req, res) => res.render("post_exercise"));
 
+    app.get("/lessons/search", (req, res) => res.render("search_lessons"));
+
     // app.get("/lessons", (req, res) => res.render("lessons"));
 };
