@@ -24,7 +24,14 @@
   <div class="card-body">
 
     <pre class="card-text">{{dataValues.lesson_plan}}</pre>
-    <small>Exercises used: <span>{{dataValues.Exercises}}  </span></small>
+    <small>Exercises used:</small>
+    {{#each dataValues.Exercises}}
+    <ul>
+      <li>{{dataValues.book_title}}</li>
+      <li>{{dataValues.author_composer}}</li>
+      <li>{{dataValues.exercise}}</li>
+    </ul>
+    {{/each}}
   </div>
 </div>
     {{/each}}

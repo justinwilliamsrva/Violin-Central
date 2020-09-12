@@ -11,7 +11,7 @@ module.exports = function(app) {
     // Sending back a password, even a hashed password, isn't a good idea
     res.json({
       email: req.user.email,
-      id: req.user.id
+      id: req.user.id,
     });
   });
 
@@ -21,12 +21,12 @@ module.exports = function(app) {
   app.post("/api/signup", (req, res) => {
     db.User.create({
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
     })
       .then(() => {
         res.redirect(307, "/api/login");
       })
-      .catch(err => {
+      .catch((err) => {
         res.status(401).json(err);
       });
   });
@@ -47,7 +47,7 @@ module.exports = function(app) {
       // Sending back a password, even a hashed password, isn't a good idea
       res.json({
         email: req.user.email,
-        id: req.user.id
+        id: req.user.id,
       });
     }
   });
@@ -73,9 +73,9 @@ module.exports = function(app) {
           { musical_key: { [Op.like]: key } },
           { difficulty: { [Op.like]: difficulty } },
           { focus: { [Op.like]: focus } },
-          { type: { [Op.like]: type } }
-        ]
-      }
+          { type: { [Op.like]: type } },
+        ],
+      },
     }).then(function(exercises) {
       console.log("exercises", exercises);
       console.log("Book Title", exercises[0].dataValues.book_title);
@@ -102,7 +102,7 @@ module.exports = function(app) {
       musical_key,
       difficulty,
       focus,
-      type
+      type,
     } = req.body;
 
     res.render("post_exercise", {
@@ -116,7 +116,7 @@ module.exports = function(app) {
       musical_key,
       difficulty,
       focus,
-      type
+      type,
     });
   });
   app.get("/api/lessons", (req, res) => {
@@ -135,8 +135,14 @@ module.exports = function(app) {
           { objective: { [Op.like]: "%" + term + "%" } },
           { lesson_plan: { [Op.like]: "%" + term + "%" } }
         ]
-      }
+      },
+      include: [
+        {
+          model: db.Exercises
+        }
+      ]
     }).then(function(objectives) {
+      console.log("first objective", objectives[0].dataValues.Exercises[0].dataValues.book_title);
       res.render("search_lessons", { objectives });
     });
   });
@@ -154,13 +160,13 @@ module.exports = function(app) {
 
     res.render("add_lessons", {
       objective,
-      lesson_plan
+      lesson_plan,
     });
 
     // Insert into table
     db.Objectives.create({
       objective,
-      lesson_plan
+      lesson_plan,
     }).then(() => res.redirect("/lessons"));
   });
 };
