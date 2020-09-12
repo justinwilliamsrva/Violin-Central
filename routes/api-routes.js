@@ -3,7 +3,7 @@ const db = require("../models");
 const passport = require("../config/passport");
 const { Op } = require("sequelize");
 
-module.exports = function (app) {
+module.exports = function(app) {
     // Using the passport.authenticate middleware with our local strategy.
     // If the user has valid login credentials, send them to the members page.
     // Otherwise the user will be sent an error
@@ -73,7 +73,7 @@ module.exports = function (app) {
                     { type: { [Op.like]: "%" + type + "%" } },
                 ],
             },
-        }).then(function (exercises) {
+        }).then(function(exercises) {
             // console.log(exercises);
             res.render("exercise", { exercises });
         });
@@ -132,8 +132,7 @@ module.exports = function (app) {
     });
 
     app.get("/lessons", (req, res) => {
-
-        db.Objectives.findAll({}).then(function (objectives) {
+        db.Objectives.findAll({}).then(function(objectives) {
             // console.log(objectives);
             res.render("all_lessons", { objectives });
         });
@@ -147,9 +146,17 @@ module.exports = function (app) {
                 [Op.or]: [
                     { objective: { [Op.like]: "%" + term + "%" } },
                     { lesson_plan: { [Op.like]: "%" + term + "%" } },
-
                 ],
-            }
-        }).then(function (objectives) { res.render("search_lessons", { objectives }) });
+            },
+        }).then(function(objectives) {
+            res.render("search_lessons", { objectives });
+        });
+    });
+
+    app.get("/lessons/add", (req, res) => {
+        db.Exercises.findAll({}).then(function(exercises) {
+            // console.log(exercises);
+            res.render("add_lessons", { exercises });
+        });
     });
 };
