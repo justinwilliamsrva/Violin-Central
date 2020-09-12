@@ -30,7 +30,7 @@ module.exports = function(app) {
 
   app.get("/lessons/add", (req, res) => res.render("addlessons"));
 
-  app.get("/exercies", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../views/exercise.handlebars"));
+  app.get("/exercises", isAuthenticated, (req, res) => {
+    res.render("exercise");
   });
 };

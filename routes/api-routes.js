@@ -53,6 +53,7 @@ module.exports = function(app) {
   });
 
   app.get("/api/exercises", (req, res) => {
+    console.log(req.body);
     const mainPosition = req.body.searchParams.mainPosition;
     const otherPosition = req.body.searchParams.secondPosition;
     const mainBowing = req.body.searchParams.mainBowing;
@@ -60,6 +61,13 @@ module.exports = function(app) {
     const key = req.body.searchParams.key;
     const focus = req.body.searchParams.focus;
     const type = req.body.searchParams.type;
+    console.log("mainPosition", mainPosition);
+    console.log("otherPosition", otherPosition);
+    console.log("mainBowing", mainBowing);
+    console.log("otherBowing", otherBowing);
+    console.log("key", key);
+    console.log("focus", focus);
+    console.log("type", type);
 
     db.Exercises.findAll({
       where: {
@@ -74,7 +82,7 @@ module.exports = function(app) {
         ]
       }
     }).then(function(exercises) {
-      // console.log(exercises);
+      console.log(exercises);
       res.render("exercise", { exercises });
     });
   });

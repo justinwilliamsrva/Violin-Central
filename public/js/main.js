@@ -1,8 +1,9 @@
 $(document).ready(() => {
   //Javascript to handle search for exercises
   $(function() {
-    $(".exesubmit").on("click", function(event) {
+    $(".execsubmit").on("click", function(event) {
       event.preventDefault();
+      console.log("clicked it!");
 
       const searchParams = {
         mainPosition: $("#mainpos").val(),
@@ -27,10 +28,10 @@ $(document).ready(() => {
       console.log("Search Parameters", searchParams);
 
       $.ajax("/api/exercises", {
-        type: "GET",
+        method: "GET",
         data: searchParams
       }).then(function() {
-        location.reload();
+        console.log("Exercises Found");
       });
     });
   });
