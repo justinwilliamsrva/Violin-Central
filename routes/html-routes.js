@@ -31,11 +31,10 @@ module.exports = function(app) {
         res.sendFile(path.join(__dirname, "../public/members.html"));
     });
 
-    // app.get("/lessons/add", (req, res) => res.render("add_lessons"));
 
     app.get("/exercises/add", (req, res) => res.render("post_exercise"));
 
-    app.get("/lessons", (req, res) => res.render("all_lessons"));
+
 
 
 

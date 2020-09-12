@@ -130,13 +130,13 @@ module.exports = function(app) {
             type,
         }).then((exercises) => res.redirect("/exercises/add"));
     });
-
     app.get("/lessons", (req, res) => {
         db.Objectives.findAll({}).then(function(objectives) {
-            // console.log(objectives);
+            console.log(objectives);
             res.render("all_lessons", { objectives });
         });
     });
+
 
     app.get("/lessons/search", (req, res) => {
         let { term } = req.query;
@@ -158,5 +158,21 @@ module.exports = function(app) {
             // console.log(exercises);
             res.render("add_lessons", { exercises });
         });
+    });
+
+    app.post("/lessons/add", (req, res) => {
+        let { objective, lesson_plan } = req.body;
+        s;
+
+        res.render("add_lessons", {
+            objective,
+            lesson_plan,
+        });
+
+        // Insert into table
+        db.Objectives.create({
+            objective,
+            lesson_plan,
+        }).then((Objectives) => res.redirect("/lessons"));
     });
 };
