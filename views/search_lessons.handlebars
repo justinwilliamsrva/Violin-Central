@@ -10,4 +10,23 @@
       <input type="submit" value="Search">
       </div>
     </form>
-  </section>
+
+
+
+</section>
+
+<section class="container">
+     {{#each objectives}}
+    <div class="card mt-3">
+  <h5 class="card-header">
+   Objective: {{dataValues.objective}}
+  </h5>
+  <div class="card-body">
+
+    <pre class="card-text">{{dataValues.lesson_plan}}</pre>
+    <small>Exercises used: <span>{{dataValues.Exercises}}  </span></small>
+  </div>
+</div>
+    {{/each}}
+
+</section>
