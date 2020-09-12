@@ -1,0 +1,21 @@
+<section id="lessons" class=" container">
+    <div class="d-flex justify-content-center">
+
+    <h1>All Lesson Plans</h1>
+</div>
+    {{#each objectives}}
+
+
+    <div class="card mb-3">
+  <h5 class="card-header">
+   Objective: {{dataValues.objective}}
+  </h5>
+  <div class="card-body">
+
+    <pre class="card-text">With supporting text below as a natural lead-in to additional content.</pre>
+    <small>Exercises used: <span>{{dataValues.Exercises}}  </span></small>
+  </div>
+</div>
+    {{/each}}
+
+  </section>

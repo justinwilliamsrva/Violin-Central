@@ -28,9 +28,19 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
 
+<<<<<<< HEAD
   app.get("/lessons/add", (req, res) => res.render("addlessons"));
 
   app.get("/exercises", isAuthenticated, (req, res) => {
     res.render("exercise");
   });
+=======
+    app.get("/lessons/add", (req, res) => res.render("add_lessons"));
+
+    app.get("/exercises/add", (req, res) => res.render("post_exercise"));
+
+    app.get("/lessons/search", (req, res) => res.render("search_lessons"));
+
+    // app.get("/lessons", (req, res) => res.render("lessons"));
+>>>>>>> master
 };

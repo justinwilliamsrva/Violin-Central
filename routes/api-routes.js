@@ -69,6 +69,7 @@ module.exports = function(app) {
     console.log("focus", focus);
     console.log("type", type);
 
+<<<<<<< HEAD
     db.Exercises.findAll({
       where: {
         [Op.and]: [
@@ -84,6 +85,65 @@ module.exports = function(app) {
     }).then(function(exercises) {
       console.log(exercises);
       res.render("exercise", { exercises });
+=======
+    app.post("/lessons/add", (req, res) => {
+        let { objective, lesson_plan } = req.body;
+        db.Objectives.create({ objective, lesson_plan }).then((Objective) =>
+            res.redirect("/lessons")
+        );
+    });
+
+    app.post("/exercises/add", (req, res) => {
+        let {
+            exercise,
+            book_title,
+            author_composer,
+            primary_positions,
+            secondary_positions,
+            primary_bowing,
+            secondary_bowing,
+            musical_key,
+            difficulty,
+            focus,
+            type,
+        } = req.body;
+
+        res.render("post_exercise", {
+            exercise,
+            book_title,
+            author_composer,
+            primary_positions,
+            secondary_positions,
+            primary_bowing,
+            secondary_bowing,
+            musical_key,
+            difficulty,
+            focus,
+            type,
+        });
+
+        // Insert into table
+        db.Exercises.create({
+            exercise,
+            book_title,
+            author_composer,
+            primary_positions,
+            secondary_positions,
+            primary_bowing,
+            secondary_bowing,
+            musical_key,
+            difficulty,
+            focus,
+            type,
+        }).then((exercises) => res.redirect("/exercises/add"));
+    });
+
+    app.get("/lessons", (req, res) => {
+        db.Objectives.findAll({}).then(function(objectives) {
+            console.log(objectives);
+            res.render("all_lessons", { objectives });
+        });
+>>>>>>> master
     });
   });
 };

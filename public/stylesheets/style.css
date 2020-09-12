@@ -3,17 +3,23 @@ form.login {
     margin-top: 50px;
 }
 
+#nav-link {
+    color: black;
+    text-decoration: none;
+}
+
 .bn {
     width: 30%;
-    height: 90%;
+    /* height: 90%; */
 }
 
 .rowbn {
-    /* padding-top: 10px; */
-    height: 30vh;
+    padding-top: 30px;
+    /* height: 30vh; */
 }
 
-h1 {
+h1,
+h3 {
     text-align: center;
 }
 
@@ -25,8 +31,25 @@ h1 {
     color: black;
 }
 
-.col-md-6{
-  background-image: linear-gradient(to right, brown , yellow);;
+.col-md-6 {
+    background-image: linear-gradient(to right, brown, yellow);
+}
+@media only screen and (max-width: 768px) {
+    .bn {
+        width: 50%;
+    }
+
+    .bn-sm {
+        margin-bottom: 30px;
+    }
 }
 
-.row
+@media only screen and (max-width: 400px) {
+    .bn {
+        width: 75%;
+    }
+
+    .bn-sm {
+        margin-bottom: 30px;
+    }
+}
