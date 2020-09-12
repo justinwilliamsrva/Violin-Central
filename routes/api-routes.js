@@ -85,7 +85,8 @@ module.exports = function(app) {
 
   app.post("/lessons/add", (req, res) => {
     const { objective, lesson_plan } = req.body;
-    db.Objectives.create({ objective, lesson_plan }).then(() => res.redirect("/lessons")
+    db.Objectives.create({ objective, lesson_plan }).then(() =>
+      res.redirect("/lessons")
     );
   });
 
@@ -117,27 +118,49 @@ module.exports = function(app) {
       focus,
       type
     });
-
-    // Insert into table
-    db.Exercises.create({
-      exercise,
-      book_title,
-      author_composer,
-      primary_positions,
-      secondary_positions,
-      primary_bowing,
-      secondary_bowing,
-      musical_key,
-      difficulty,
-      focus,
-      type
-    }).then(() => res.redirect("/exercises/add"));
   });
-
-  app.get("/lessons", (req, res) => {
+  app.get("/api/lessons", (req, res) => {
     db.Objectives.findAll({}).then(function(objectives) {
       console.log(objectives);
       res.render("all_lessons", { objectives });
     });
+  });
+
+  app.get("/lessons/search", (req, res) => {
+    const { term } = req.query;
+
+    db.Objectives.findAll({
+      where: {
+        [Op.or]: [
+          { objective: { [Op.like]: "%" + term + "%" } },
+          { lesson_plan: { [Op.like]: "%" + term + "%" } }
+        ]
+      }
+    }).then(function(objectives) {
+      res.render("search_lessons", { objectives });
+    });
+  });
+
+  app.get("/lessons/add", (req, res) => {
+    db.Exercises.findAll({}).then(function(exercises) {
+      // console.log(exercises);
+      res.render("add_lessons", { exercises });
+    });
+  });
+
+  app.post("/lessons/add", (req, res) => {
+    const { objective, lesson_plan } = req.body;
+    s;
+
+    res.render("add_lessons", {
+      objective,
+      lesson_plan
+    });
+
+    // Insert into table
+    db.Objectives.create({
+      objective,
+      lesson_plan
+    }).then(() => res.redirect("/lessons"));
   });
 };

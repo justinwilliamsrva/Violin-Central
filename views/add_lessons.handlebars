@@ -1,0 +1,38 @@
+<section id="add" class="container">
+    <div class="form-wrap">
+     <div class="d-flex justify-content-center"id="header">
+      <h1>Add a Lesson Plan</h1>
+      </div>
+
+      <form action="/lessons/add" method="POST">
+        <div class="form-group">
+          <label for="objective">Objective</label>
+          <input type="text" name="objective" id="objective" class="form-control" placeholder="eg. Legato, Facility, Vibrato..."
+            value={{objective}}>
+        </div>
+           <div class="form-group">
+          <label for="lesson_plan">Lesson Plan</label>
+
+          <textarea name="lesson_plan" id="lesson_plan" class="form-control" placeholder="Describe the details of the lesson plan"
+            rows="10">{{lesson_plan}}</textarea>
+        </div>
+
+  <label for="exercises">Select Exercises - Hold down the Ctrl (windows) or Command (Mac) button to select multiple exercises</label>
+
+
+                        <select class="form-control" name="Exercises" id="exercises" multiple >
+ {{#each exercises}}
+
+                            <option>{{dataValues.book_title}} -  Exercise# {{dataValues.exercise}}</option>
+                             {{/each}}
+
+                        </select>
+
+
+
+ <div class="pt-4">
+        <input class="execsubmit" type="submit" value="Add Lesson">
+        </div>
+      </form>
+    </div>
+  </section>
