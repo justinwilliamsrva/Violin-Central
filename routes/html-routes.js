@@ -31,4 +31,6 @@ module.exports = function(app) {
   app.get("/exercises", isAuthenticated, (req, res) => res.render("exercise"));
 
   app.get("/exercises/add", (req, res) => res.render("post_exercise"));
+
+  app.get("/lessons", isAuthenticated, (req, res) => res.render("search_lessons"));
 };
